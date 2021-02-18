@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
-const { json } = require('express');
 
 const Store = mongoose.model('Store');
 

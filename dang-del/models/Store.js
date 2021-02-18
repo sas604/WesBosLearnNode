@@ -1,7 +1,6 @@
-const { Store } = require('express-session');
 const mongoose = require('mongoose');
 // tells mongoose to use native promises
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 const slug = require('slugs');
 
 mongoose.set('useFindAndModify', false);

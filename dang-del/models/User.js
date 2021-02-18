@@ -5,7 +5,7 @@ const mongodbErrorHandler = require('mongoose-mongodb-errors');
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const { Schema } = mongoose;
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 
 const userSchema = new Schema({
   email: {
@@ -21,6 +21,8 @@ const userSchema = new Schema({
     required: 'Please supply a name',
     trim: true,
   },
+  resetPasswordExpires: Date,
+  resetPasswordToken: String,
 });
 
 userSchema.virtual('gravatar').get(function () {
