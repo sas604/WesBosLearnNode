@@ -51,7 +51,6 @@ function typeAhead(search) {
     const items = search.querySelectorAll('.search__result');
     let next;
     if (e.keyCode === 40 && current) {
-      console.log('ss');
       next = current.nextElementSibling || items[0];
     } else if (e.keyCode === 40) {
       [next] = items;
