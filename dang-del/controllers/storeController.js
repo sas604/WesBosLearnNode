@@ -55,7 +55,6 @@ exports.createStore = async (req, res) => {
 };
 
 exports.getStores = async (req, res) => {
-  // TODO Query database for a list of all stores
   const stores = await Store.find();
 
   res.render('stores', { title: 'Stores', stores });
@@ -168,4 +167,10 @@ exports.heartStore = async (req, res) => {
 exports.hearts = async (req, res) => {
   const stores = await Store.find({ _id: { $in: req.user.hearts } });
   res.render('stores', { title: 'liked Stores', stores });
+};
+
+exports.getTopStores = async (req, res) => {
+  const stores = await Store.getTopStores();
+
+  res.render('topStores', { stores, title: '⭐ Top Stores!' });
 };
